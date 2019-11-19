@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Inspection Station Management System</title>
+</head>
+
+<body style="background-color: #cce6ff">
+
+<div class="container">
+
+
+	<hr>
+	<h2><center>Inspection Station Management System</center></h2>
+	<hr>
+	
+	<p>What do you want to see? Please select an option:</p>
+
+	<p>
+ 		 <a href="/inspections/list" 
+  			th:href="@{/inspections/list}" 
+  			class="btn btn-primary btn-lg btn-block">
+  			Inspections list
+ 		 </a>
+ 	</p>
+ 	 
+ 	  	 <p>
+   		 <a href="/cars/list" 
+  			th:href="@{/cars/list}" 
+  			class="btn btn-secondary btn-lg btn-block">
+  			Cars list
+ 		 </a>
+ 	</p>
+ 	 
+ 	 <p>
+   		 <a href="/employees/list" 
+  			th:href="@{/employees/list}" 
+  			class="btn btn-secondary btn-lg btn-block">
+  			Employees list
+ 		 </a>
+ 	</p>
+	
+	<hr>
+	
+	<center><img th:src="@{/images/stacjakontroli.jpg}"
+         src="../images/stacjakontroli.jpg" class="img-responsive" alt="Responsive image"/></center>
+	
+		<hr>
+	
+</div>
+	
+</body>
+</html>
+
+
+
+	  

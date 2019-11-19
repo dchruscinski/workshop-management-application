@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Car list</title>
+</head>
+
+<body style="background-color: #cce6ff">
+
+<div class="container">
+
+	<hr>
+	<h3>Car list</h3>
+	<hr>
+	
+	<!-- Add a button -->
+	<a th:href="@{/cars/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
+		Add car
+	</a>
+	
+	<a th:href="@{/}"
+		class="btn btn-secondary btn-sm mb-3">
+		Back to the main page
+	</a>
+	
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Car ID</th>
+				<th>Car model</th>
+				<th>VIN</th>
+				<th>Car registration number</th>
+				<th>Owner first name</th>
+				<th>Owner last name</th>
+				<th>Owner birth date</th>
+				<th>Owner address</th>
+				<th>Owner e-mail address</th>
+				<th>Owner phone number</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempCar : ${cars}">
+				<td th:text="${tempCar.carId}" />
+				<td th:text="${tempCar.carModel}" />
+				<td th:text="${tempCar.vin}" />
+				<td th:text="${tempCar.carReg}" />
+				<td th:text="${tempCar.firstName}" />
+				<td th:text="${tempCar.lastName}" />
+				<td th:text="${tempCar.birthDate}" />
+				<td th:text="${tempCar.address}" />
+				<td th:text="${tempCar.email}" />
+				<td th:text="${tempCar.phoneNumber}" />
+
+				
+				<td>
+					<!-- Add "update" button/link -->
+					<a th:href="@{/cars/showFormForUpdate(carId=${tempCar.carId})}"
+					   class="btn btn-info btn-sm">
+						Update
+					</a>
+					
+					<!-- Add "delete" button/link -->					
+					<a th:href="@{/cars/delete(carId=${tempCar.CarId})}"
+					   class="btn btn-danger btn-sm"
+					   onclick="if (!(confirm('Are you sure you want to delete this car?'))) return false">
+						Delete
+					</a>
+					
+				</td>
+				
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Add car</title>
+</head>
+
+<body style="background-color: #cce6ff">
+
+	<div class="container">
+	
+		<hr>
+		<h3>Cars list</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Add car</p>
+	
+		<form action="#" th:action="@{/cars/save}"
+						 th:object="${car}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{carId}" />
+			
+			<input type="text" th:field="*{carModel}"
+					class="form-control mb-4 col-4" placeholder="Car model">
+
+			<input type="text" th:field="*{vin}"
+					class="form-control mb-4 col-4" placeholder="VIN">
+					
+			<input type="text" th:field="*{carReg}"
+					class="form-control mb-4 col-4" placeholder="Car registration number">
+
+			<input type="text" th:field="*{firstName}"
+					class="form-control mb-4 col-4" placeholder="Owner first name">
+					
+			<input type="text" th:field="*{lastName}"
+					class="form-control mb-4 col-4" placeholder="Owner last name">
+					
+			<input type="text" th:field="*{birthDate}"
+					class="form-control mb-4 col-4" placeholder="Owner birth date">
+
+			<input type="text" th:field="*{address}"
+					class="form-control mb-4 col-4" placeholder="Owner address">
+					
+			<input type="text" th:field="*{email}"
+					class="form-control mb-4 col-4" placeholder="Owner e-mail address">
+					
+			<input type="text" th:field="*{phoneNumber}"
+					class="form-control mb-4 col-4" placeholder="Owner phone number">					
+				
+			<button type="submit" class="btn btn-info col-2">Save car</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/cars/list}">Back to cars list</a>
+		<hr>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

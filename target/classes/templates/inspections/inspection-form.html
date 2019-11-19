@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Add car</title>
+</head>
+
+<body style="background-color: #cce6ff">
+
+	<div class="container">
+	
+		<hr>
+		<h3>Inspections list</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Add inspection</p>
+	
+		<form action="#" th:action="@{/inspections/save}"
+						 th:object="${inspection}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{inspectionId}" />
+			
+			<label for="carReg">Car registration number:</label>
+			<select id="carReg" th:field="*{car}">
+    			<option th:each="i : ${car}" th:value="${{i}}" th:text="${i.carReg}">
+    			</option>
+			</select>
+			
+			<br>
+			
+			<label for="employee">Employee ID:</label>		
+			<select id="employee" th:field="*{employee}">
+    			<option th:each="i : ${employee}" th:value="${{i}}" th:text="${i.employeeId}">
+    			</option>
+			</select>
+					
+			<br>		
+					
+			<input type="text" th:field="*{dateTime}"
+					class="form-control mb-4 col-4" placeholder="Inspection date">					
+				
+			<button type="submit" class="btn btn-info col-2">Save car</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/inspections/list}">Back to inspections list</a>
+		<hr>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
